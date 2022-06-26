@@ -16,7 +16,8 @@ router.get("/", getAllCourses)
 router.post('/createCourse', verifyToken,  createCourse)
 router.get("/user/:id", getCourseByUser)
 router.get('/category/:category', getCourseByCategory)
-router.put('/like/:id', verifyUser, likeCourse)
+router.put('/like/:id', verifyToken, likeCourse)
+// router.get("/countLikes/:courseId", getCourseLikes)
 
 // /api/v2/course/:id
 

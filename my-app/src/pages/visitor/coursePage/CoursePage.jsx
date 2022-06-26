@@ -18,6 +18,7 @@ const CoursePage = () => {
       `/course/${id}`
     );
     
+    // const likes = data.likes.length
     const dispatch = useDispatch();
   
     const handleClick = () => {
@@ -26,7 +27,7 @@ const CoursePage = () => {
       );
     };
 
-console.log(data)
+// console.log(data.likes.length)
 
   return (
     <>
@@ -45,6 +46,7 @@ console.log(data)
             {data.desc}
         </div>
         <div className='Price'>$ {data.price}</div>
+        <div className='Price'>likes {data.likes.length}</div>
 
 
 {/* 

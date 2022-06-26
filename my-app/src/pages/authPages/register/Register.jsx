@@ -84,9 +84,14 @@ function Register() {
     //   username,
     //   password,
     // }
+    if (credentials.password === credentials.password2) {
+      register(dispatch, credentials)
+    } else {
+      alert("Password do not match!")
+    }
 
     // dispatch(login(credentials))
-    register(dispatch, credentials)
+    // register(dispatch, credentials)
   }
 
   useEffect(() => {

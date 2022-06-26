@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector} from 'react-redux'
 import ConsumeCourse from '../../../components/user/consumeCourse/ConsumeCourse';
+import {addLike} from '../../../features/likeCourse/likeCourseSlice'
 
 
     

@@ -4,6 +4,7 @@ import instructorCoursesReducer from '../features/instructorCourses/instructorCo
 import categoriesReducer from '../features/categories/categoriesSlice'
 import adminUsersReducer from '../features/adminUsers/adminUsersSlice'
 import cartReducer from '../features/cart/cartSlice.js'
+import likeCourseReducer from '../features/likeCourse/likeCourseSlice'
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     categories: categoriesReducer,
     adminUsers: adminUsersReducer,
     cart: cartReducer,
+    likeCourse: likeCourseReducer
   },
 });

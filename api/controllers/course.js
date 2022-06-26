@@ -141,6 +141,24 @@ export const likeCourse = async (req,res,next)=>{
   }
 }
 
+
+
+// export const getCourseLikes = async (req, res, next) => {
+//   // const course = req.query.course.split(",");
+//   const course = await Course.findById(req.params.courseId).likes.count();
+//   try {
+//     const number = await course.likes
+//     // const list = await Promise.all(
+//     //   cities.map((city) => {
+//     //     return Hotel.countDocuments({ city: city });
+//     //   })
+//     // );
+//     res.status(200).json(course);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
+
 //like / dislike a post
 
 // router.put("/:id/like", async (req, res) => {
