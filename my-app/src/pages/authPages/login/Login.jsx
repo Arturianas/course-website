@@ -1,3 +1,4 @@
+import './login.scss'
 import { useState, useEffect } from 'react'
 // import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
@@ -7,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 // import Spinner from '../components/Spinner'
 import axios from "axios";
+import Navbar from '../../../components/common/navbar/Navbar'
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -76,7 +78,11 @@ function Login() {
   // }
 
   return (
+    <>
+    <Navbar/>
+    <h1>Login</h1>
     <div className="login">
+      
       <div className="lContainer">
         <input
           type="text"
@@ -95,9 +101,10 @@ function Login() {
         <button disabled={isLoading} onClick={handleClick} className="lButton">
           Login
         </button>
-        {isError && <span>{isError.message}</span>}
+        {isError && <span style={{ color: 'red' }}>Somethin went Wrong</span>}
       </div>
     </div>
+    </>
   )
 }
 

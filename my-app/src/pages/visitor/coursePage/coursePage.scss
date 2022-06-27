@@ -1,22 +1,109 @@
-.Wrapper {
+.coursePageWrapper {
     padding: 50px;
     display: flex;
+    // border: 2px dashed purple;
 }
 
 .ImageContainer {
     flex: 1;
+    // border: 2px solid grey;
 }
 
-img {
-    width: 100%;
-    height: 90vh;
+// img {
+//     width: 100%;
+//     height: 90vh;
+//     object-fit: cover;
+//     /* ${mobile({height: '45vh'})}; */
+// }
+
+video.coursePageVideo {
+    max-width: 100%;
+    width: 500px;
+    height: 400px;
+    // height: 90vh;
     object-fit: cover;
     /* ${mobile({height: '45vh'})}; */
 }
 
 .InfoContainer {
     flex: 1;
-padding: 0px 50px
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 50px;
+    // border: 2px solid blue;
+
+
+    .ProductDescription{
+        // border: 2px dashed green;
+
+        h2{
+
+        }
+    }
+
+    .infoContainerBottom {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+
+
+
+        .likes {
+            width: 10%;
+            // border: 2px solid orange;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icon{
+                color: orange;
+            }
+
+            span{
+                font-weight: 600;
+            }
+        }
+
+
+
+        .addCartAndPrice {
+            // border: 2px dashed darkcyan;
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .Price {
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        button.addCart {
+            background-color: #1c1d1f;
+            border: none;
+            // border-radius: ;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+
+
+            &:hover {
+                background-color: black;
+            }
+        }
+    }
+
+    // .instructorCourseinfo {
+    //     border: 2px dashed orange;
+    // }
 }
 
 .Title {
@@ -36,7 +123,7 @@ font-size: 21px;
     display: flex;
     justify-content: space-between;
     width: 50%;
-    marging: 30px 0px;
+    // marging: 30px 0px;
 }
 
 .Filter {
@@ -60,4 +147,12 @@ font-weight: 600;
 
 .Button {
     
+}
+
+.instructorCourseinfo {
+    // border: 2px dashed orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
 }

@@ -1,6 +1,8 @@
+import './register.scss'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../../../components/common/navbar/Navbar'
 // import { toast } from 'react-toastify'
 // import { FaUser } from 'react-icons/fa'
 // import { register, reset } from '../../features/auth/authSlice'
@@ -108,11 +110,15 @@ function Register() {
 
   return (
     <>
-      <section className='heading'>
+    <Navbar/>
+    <h1>Please create an account</h1>
+    <div className="login">
+      
+    <section className='heading'>
         <h1>
           {/* <FaUser /> Register */}
         </h1>
-        <p>Please create an account</p>
+        
       </section>
 
       <section className='form'>
@@ -165,9 +171,12 @@ function Register() {
             <button type='submit' onClick={handleClick} className='btn btn-block'>
               Submit
             </button>
+            {isError && <span style={{ color: 'red' }}>Somethin went Wrong</span>}
           </div>
         </form>
       </section>
+    </div>
+      
     </>
   )
 }

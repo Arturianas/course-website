@@ -9,6 +9,10 @@ import {
 import { useDispatch } from 'react-redux';
 import Navbar from '../../../components/common/navbar/Navbar';
 import { addProduct } from "../../../features/cart/cartSlice";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ConsumeCourse from '../../../components/user/consumeCourse/ConsumeCourse';
+import AboutInstructor from '../aboutInstructor/AboutInstructor';
 
 const CoursePage = () => {
 
@@ -18,7 +22,7 @@ const CoursePage = () => {
       `/course/${id}`
     );
     
-    // const likes = data.likes.length
+    const likes =  data.likes?.length || 0
     const dispatch = useDispatch();
   
     const handleClick = () => {
@@ -27,48 +31,52 @@ const CoursePage = () => {
       );
     };
 
-// console.log(data.likes.length)
+//  console.log(data.likes.length)
 
   return (
     <>
     <Navbar/>
-        <div className='Wrapper'>
+        <div className='coursePageWrapper'>
     <div className='ImageContainer'>
         {/* <img src={data.img} alt="courseImage"/> */}
-        <video src={data.promotionVideo} controls />
+        <video src={data.promotionVideo} controls className='coursePageVideo' />
     </div>
 
     <div className='InfoContainer'>
         <div className='Title'>
-            {data.title}
+            <h1>{data.name}</h1>
         </div>
         <div className='ProductDescription'>
-            {data.desc}
+            <h2>Description:</h2>
+            <p>{data.desc}</p>
         </div>
-        <div className='Price'>$ {data.price}</div>
-        <div className='Price'>likes {data.likes.length}</div>
-
-
-{/* 
-        <div className='FilterContainer'>
-        <div className='Filter'>
-      
-    </div>
-
-            <div className='Filter'>
-                <h2>filter</h2>
-                
+       
+        <div className="infoContainerBottom">
+          <div className='likes'>
+            <ThumbUpIcon className='icon'/> 
+            <span>{likes}</span>
+          </div>
+          <div className="addCartAndPrice">
+            <div className='Price'>$ {data.price}</div>
+            <div className=''>      
+                <button className='addCart' onClick={handleClick}>ADD TO CART</button>
             </div>
-        </div> */}
-
-
-        <div className='AddContainer'>
-            
-            <button className='Button' onClick={handleClick}>ADD TO CART</button>
+          </div>
         </div>
 
     </div>
+
+    {/* <div className="aboutInstructor"> */}
+    
+            
+        
+    {/* </div> */}
+   
 </div>
+  <div className="instructorCourseinfo">
+    <AboutInstructor instructorId={data.instructor} course={data}/>
+  </div>
+  
     </>
   )
 }

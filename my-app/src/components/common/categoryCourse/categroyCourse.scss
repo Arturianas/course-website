@@ -1,0 +1,40 @@
+.categoryCourse {
+    // border: 2px dashed orange;
+    margin: 10px;
+    border: 2px dashed teal;
+    
+}
+
+
+
+.nameLevel {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        margin: 10px 0px;
+    }
+}
+
+
+
+.likePrice{
+    // border: 2px dashed blue;
+    display: flex;
+    justify-content: space-between;
+
+
+
+    span.likes{
+        // border: 2px dashed green;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 20%;
+
+
+        .icon {
+            color: orange;
+        }
+    }
+}

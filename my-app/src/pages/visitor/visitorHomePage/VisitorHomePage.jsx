@@ -15,9 +15,9 @@ const VisitorHomePage = () => {
         {/* <Header/> */}
     {/* <Featured/> */}
     <h2>You are Visitor, welcome to Marketplace!</h2>
-    <h1 className="homeTitle">Visitor </h1>
+    <h1 className="homeTitle">Categories </h1>
     <CourseList/>
-    <h1 className="homeTitle">Visitor</h1>
+    <h1 className="homeTitle">Courses</h1>
     {/* <FeaturedCourses cat=""/> */}
     <FeaturedCourses cat=""/>
     {/* {!user && <MailList/>} */}

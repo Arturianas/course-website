@@ -59,17 +59,17 @@ const AdminSidebar = () => {
                 <li className='list-item list-item-icon'>
                     <BarChartIcon className='icon'/>
                     <span className='list-item-text'>Stats</span>
-                    <LockIcon className='lock icon'/>
+                    <LockIcon className='lockicon'/>
                 </li>
                 <li className='list-item list-item-icon'>
                     <SettingsIcon className='icon'/>
                     <span className='list-item-text'>Settings</span>
-                    <LockIcon className='lock icon'/>
+                    <LockIcon className='lockicon'/>
                 </li>
             </ul>
         </div>
         <div className="sidebar-bottom">
-            <button onClick={onLogout} className='logOutBtn'><LogoutIcon className='icon'/><span className='logout'>Logout</span></button>
+            <button onClick={onLogout} className='logOutBtn'><LogoutIcon className='logouticon'/><span className='logout'>Logout</span></button>
         </div>
     </div>
   )

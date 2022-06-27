@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+}
+
+.publicInstructor {
+    border: 2px dashed teal;
+    margin: 25px 0px;
+    width: 90%;
+    height: 150px;
+}
+
+.pubInstructorCourses {
+    border: 2px dashed orange;
+    width: 90%;
+    height: 300px;
+}

@@ -23,6 +23,8 @@ import CoursePage from './pages/visitor/coursePage/CoursePage';
 import ConsumeCoursePage from './pages/user/consumeCoursePage/ConsumeCoursePage';
 import InstructorSidebar from './components/instructor/instructorSidebar/InstructorSidebar';
 import AdminSidebar from './components/admin/adminSidebar/AdminSidebar';
+import CoursesByCategoryPage from './pages/common/coursesByCategoryPage/CoursesByCategoryPage';
+import InstructoPublicPage from './pages/common/instructorPublicPage/InstructoPublicPage';
 
 
 
@@ -50,12 +52,15 @@ const Main = () => {
         <Route path="/instructor/courses" element={<InstructorCoursesPage/>}/>
         <Route path="/instructor/courses/:id" element={<InstructorSingleCoursePage/>}/>
         <Route path="/instructor/course/new" element={<InstructorNewCoursePage/>}/>
+        <Route path="/instructor/:id" element={<InstructoPublicPage/>}/>
 
         <Route path="/myCourses" element={<MyCourses/>} />
         <Route path="/myCourses/:id" element={<ConsumeCoursePage/>} />
 
         <Route path="/cart" element={<CartPage/>} />
         <Route path="/course/:id" element={<CoursePage/>} />
+        <Route path="/courses/:category" element={<CoursesByCategoryPage/>} />
+
 
         
         {/* <Route path="/courses" element={<List/>} />

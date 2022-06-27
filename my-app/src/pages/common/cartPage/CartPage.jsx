@@ -29,6 +29,10 @@ const products = cart.products.map(unit => unit._id)
     })
 }
 
+const handleVisitor = () => {
+    navigate("/login")
+}
+
 
   return (
     <>
@@ -89,7 +93,12 @@ const products = cart.products.map(unit => unit._id)
                     {/* <span className='summaryItem'>Discount: <span className='discount'>- $15</span></span> */}
                     <span className='summaryItem'>Items: <span className='discount'>{cart.quantity}</span></span>
                     <span className='summaryItem totalPrice'>Total: <span className='total'>$25</span></span>
-                    <button onClick={handleUpdate} className=' buyBtn'>Buy Now</button>
+                    {!user? (
+                        <button onClick={handleVisitor} className=' buyBtn'>Login First</button>
+                    ) : (
+                        <button onClick={handleUpdate} className=' buyBtn'>Buy Now</button>
+                    )}
+                    
                 </div>
             </div>
         </div> 
