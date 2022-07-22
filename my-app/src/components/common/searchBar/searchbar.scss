@@ -1,0 +1,133 @@
+// .searchBar {
+//     border: 1.2px solid rgb(44, 44, 44);
+//     // border: 1px solid rgb(138, 138, 138);
+//     border-radius: 90px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 40%;
+
+
+//     div{
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         padding: 7px 20px;
+//         width: 100%;
+//     }
+
+//     input {
+//         border: none;
+//         outline: none;
+//         flex: 10;
+//     }
+
+//     button {
+//         background-color: transparent;
+//         border: none;
+//         flex: 1;
+//     }
+// }
+
+// .guul {
+//     background-color: red;
+//     position: absolute;
+//   left: 0px;
+//   top: 70px;
+//   z-index: 69;
+// }
+
+// .tinka {
+//     display: flex;
+//     flex-direction: column;
+//     position: relative;
+// }
+
+
+
+.searchComponent {
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 40%;
+    background-color: #fafafa;
+
+    .searchBar {
+        // border: 1.2px solid rgb(44, 44, 44);
+        // border: 1px solid rgb(138, 138, 138);
+
+        // border: 1.2px solid #A9A9A9;
+        border: 1.3px solid #A9A9A9;
+
+        // border-radius: 90px;
+        
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // width: 40%;
+    
+    
+        .searchBox {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 5px 20px;
+    
+    
+    
+            input {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                flex: 10;
+            }
+    
+            button {
+                background-color: transparent;
+                border: none;
+                flex: 1;
+            }
+        }
+    }
+
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        background: #fff;
+        border: 1px solid #d1d7dc;
+        left: 0;
+        padding: 1.6rem;
+        margin-top: 0.4rem;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        transform-origin: top;
+        z-index: 1000;
+        overflow: auto;
+
+
+
+        li {
+            margin-top: 15px;
+        }
+    }
+
+
+    .fastSearchResults {
+        // background-color: #EFEFEF;
+        // width: 100%;
+        // position: absolute;
+        // left: 0px;
+        // top: 70px;
+        // z-index: 69;
+
+        background-color: #fafafa;
+    }
+}
+
+

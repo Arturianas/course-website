@@ -13,6 +13,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ConsumeCourse from '../../../components/user/consumeCourse/ConsumeCourse';
 import AboutInstructor from '../aboutInstructor/AboutInstructor';
+import NewNavbar from '../../../components/common/newNavbar/NewNavbar';
 
 const CoursePage = () => {
 
@@ -36,6 +37,7 @@ const CoursePage = () => {
   return (
     <>
     <Navbar/>
+    {/* <NewNavbar/> */}
         <div className='coursePageWrapper'>
     <div className='ImageContainer'>
         {/* <img src={data.img} alt="courseImage"/> */}

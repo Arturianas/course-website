@@ -28,6 +28,10 @@ export const createCourse = async (req, res, next) => {
 
 
 
+
+
+
+
 // @desc UPDATE Course
 //  @route PUT /api/v2/course/:id
 // @access Private 
@@ -175,3 +179,19 @@ export const likeCourse = async (req,res,next)=>{
 //     res.status(500).json(err);
 //   }
 // });
+
+
+
+
+
+export const search = async (req, res, next) => {
+  const query = req.query.q;
+  try {
+    const courses = await Course.find({
+      name: { $regex: query, $options: "i" },
+    }).limit(10);
+    res.status(200).json(courses);
+  } catch (err) {
+    next(err);
+  }
+};

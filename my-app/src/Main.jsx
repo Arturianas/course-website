@@ -26,6 +26,8 @@ import AdminSidebar from './components/admin/adminSidebar/AdminSidebar';
 import CoursesByCategoryPage from './pages/common/coursesByCategoryPage/CoursesByCategoryPage';
 import InstructoPublicPage from './pages/common/instructorPublicPage/InstructoPublicPage';
 
+import Search from './pages/common/searchPage/Search'
+
 
 
 const Main = () => {
@@ -60,6 +62,7 @@ const Main = () => {
         <Route path="/cart" element={<CartPage/>} />
         <Route path="/course/:id" element={<CoursePage/>} />
         <Route path="/courses/:category" element={<CoursesByCategoryPage/>} />
+        <Route path="/search" element={<Search/>} />
 
 
         

@@ -1,7 +1,8 @@
 .mail{
     width: 100%;
     margin-top: 50px;
-    background-color: rgb(243, 243, 243);
+    // background-color: rgb(243, 243, 243);
+    background-color: #CAEBF2;
     /* color: white; */
     display: flex;
     flex-direction: column;
@@ -17,15 +18,17 @@
     padding: 10px;
     border: none;
     margin-right: 10px;
-    border-radius: 5px;
+    // border-radius: 5px;
+    background-color: #fafafa;
+    outline: none;
   }
   
   .mailInputContainer>button{
     height: 50px;
-    background-color: #0071c2;
+    background-color: #FF3B3F;
     color: white;
     font-weight: 500;
     border: none;
-    border-radius: 5px;
+    // border-radius: 5px;
     cursor: pointer;
   }

@@ -22,7 +22,7 @@ const CourseList = () => {
            </Link>
           <div className="pListTitles">
             <h1>{item.category}</h1>
-            <h2>233 courses</h2>
+            {/* <h2>233 courses</h2> */}
           </div>
         </div>
     ))}

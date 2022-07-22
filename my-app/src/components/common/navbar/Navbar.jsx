@@ -5,6 +5,8 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { useSelector, useDispatch } from 'react-redux'
 import { Logout } from '../../../features/auth/authService'
 import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+import SearchBar from "../searchBar/SearchBar";
 
 
 
@@ -12,6 +14,10 @@ const Navbar = () => {
   const { user } = useSelector((state) => state.auth)
   // const  cart  = useSelector((state) => state.cart)
   const  quantity  = useSelector((state) => state.cart.quantity)
+  // const navigate = useNavigate();
+  // const [q, setQ] = useState("")
+
+  // console.log(q)
   
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -32,9 +38,19 @@ const Navbar = () => {
             <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
                 <span className="logo">UDEMY</span>
             </Link>
+
+                {/* <form >
+                  <input type="text" placeholder="Search.." name="search" onChange={(e) => setQ(e.target.value)}/>
+                  <button type="submit" onClick={()=>navigate(`/search?q=${q}`)}>Submit</button>
+                </form> */}
+                <SearchBar/>
+
             <div className="navItems">
                 <button className="navTextButton">Categories</button>
-                <button className="navTextButton">Udemy Business</button>
+                {/* <button className="navTextButton">Udemy Business</button> */}
+
+                
+
                 <button className="navTextButton">Teach On Udemy</button>
                   <Link to="/cart" style={{ color: "inherit", textDecoration: "none" }}>
                     <button className="navTextButton"> <FontAwesomeIcon icon={faCartPlus} /><span className="cart">{quantity}</span></button>

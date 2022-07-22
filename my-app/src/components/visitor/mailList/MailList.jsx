@@ -1,3 +1,4 @@
+import AnimatedShapes from "../../common/animatedShapes/AnimatedShapes"
 import "./mailList.scss"
 
 const MailList = () => {
@@ -9,6 +10,7 @@ const MailList = () => {
         <input type="text" placeholder="Your Email" />
         <button>Subscribe</button>
       </div>
+      {/* <AnimatedShapes/> */}
     </div>
   )
 }
