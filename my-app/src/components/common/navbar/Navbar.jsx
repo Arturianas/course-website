@@ -68,10 +68,10 @@ const Navbar = () => {
                 ) : (
                   <>
                     <Link to="/register" style={{ color: "inherit", textDecoration: "none" }}>
-                  <button className="navButton">Register</button>
+                  <button className="register">Register</button>
                 </Link>
                 <Link to="/login" style={{ color: "inherit", textDecoration: "none" }}>
-                  <button className="navButton">Login</button>
+                  <button className="login">Login</button>
                 </Link>
                   </>
                 )}

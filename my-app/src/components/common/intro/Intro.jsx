@@ -4,11 +4,11 @@ import styled from "styled-components";
 import AnimatedShapes from "../animatedShapes/AnimatedShapes";
 
 const Container = styled.div`
-//   height: calc(100vh - 70px);
- height: 100vh;
+   height: calc(100vh - 70px);
+//  height: 100vh;
     background-color: #EFEFEF;
   display: flex;
-  padding: 20px;
+  // padding: 20px;
   @media only screen and (max-width: 480px) {
     flex-direction: column;
   }
