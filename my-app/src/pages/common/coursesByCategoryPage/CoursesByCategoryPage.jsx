@@ -5,6 +5,7 @@ import Navbar from '../../../components/common/navbar/Navbar'
 import CourseList from '../../../components/common/courseList/CourseList'
 import FeaturedCourses from '../../../components/common/featuredCourses/FeaturedCourses';
 import CategoryCourse from '../../../components/common/categoryCourse/CategoryCourse';
+import MainNavbar from '../../../components/common/mainNavbar/MainNavbar';
 
 const CoursesByCategoryPage = () => {
 
@@ -20,7 +21,8 @@ const CoursesByCategoryPage = () => {
 
   return (
     <div>
-         <Navbar/>
+         {/* <Navbar/> */}
+         <MainNavbar/>
          <div className="category">
             <h1>{category} category</h1>
          </div>

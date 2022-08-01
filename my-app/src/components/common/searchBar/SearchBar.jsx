@@ -3,16 +3,20 @@ import './searchbar.scss'
 import { useNavigate } from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
 
+
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+// import useScrollPosition from '../../../hooks/useScrollPosition';
 
 const SearchBar = () => {
 
     const navigate = useNavigate()
     const [q, setQ] = useState("")
+
+    // const scrollPosition = useScrollPosition()
   
 
-
+    const [isActive, setIsActive] = useState(false)
     const [courses, setCourses] = useState([]);
     // const query = useLocation().search;
   
@@ -27,7 +31,7 @@ const SearchBar = () => {
 
 // console.log(courses)
 
-
+// console.log(isActive)
 
 
 
@@ -37,15 +41,15 @@ const SearchBar = () => {
     <div className='searchComponent'>
       <form className='searchBar'>
         <div className='searchBox'>
-            <input className='searchBarInput' type="text" placeholder="Search course.." autocomplete="off" name="search" onChange={(e) => setQ(e.target.value)}/>
-            <button  type="submit" onClick={()=>navigate(`/search?q=${q}`)}>
+            <input className='searchBarInput' onFocus={()=> setIsActive(true)} onBlur={()=>setIsActive(false)} type="text" placeholder="Search course.." autocomplete="off" name="search" onChange={(e) => setQ(e.target.value)}/>
+            <button  type="submit" onClick={()=>navigate(`/search?q=${q}`, {state: q})}>
                 <SearchIcon className="icon" style={{color: "#A9A9A9"}}/>
             </button>
         </div>   
 
 
 
-        {q.length >= 1 && (
+        {isActive && q.length >= 1 && (
       <ul className="fastSearchResults">
       {courses.map(video=>(
         

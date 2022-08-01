@@ -56,6 +56,12 @@ export default function ListItem({course}) {
           <h4><b>{course.name}</b></h4>
           <p>${course.price}</p>
         </div>
+
+
+
+        {/* <div className="hiddenListItem">
+          <video src={course.promotionVideo}/>
+        </div> */}
       </div>
 
      

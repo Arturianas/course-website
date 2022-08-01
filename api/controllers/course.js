@@ -184,14 +184,43 @@ export const likeCourse = async (req,res,next)=>{
 
 
 
+// export const search = async (req, res, next) => {
+//   const query = req.query.q;
+//   try {
+//     const courses = await Course.find({
+//       name: { $regex: query, $options: "i" },
+//     }).limit(10);
+//     res.status(200).json(courses);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
+
 export const search = async (req, res, next) => {
-  const query = req.query.q;
+  // const query = req.query.q;
+  const { min, max, q, ...others } = req.query;
   try {
     const courses = await Course.find({
-      name: { $regex: query, $options: "i" },
+      ...others,
+      name: { $regex: q, $options: "i" },
+      price: { $gt: min | 1, $lt: max || 999 },
     }).limit(10);
     res.status(200).json(courses);
   } catch (err) {
     next(err);
   }
 };
+
+
+// export const getHotels = async (req, res, next) => {
+//   const { min, max, ...others } = req.query;
+//   try {
+//     const hotels = await Hotel.find({
+//       ...others,
+//       cheapestPrice: { $gt: min | 1, $lt: max || 999 },
+//     }).limit(req.query.limit);
+//     res.status(200).json(hotels);
+//   } catch (err) {
+//     next(err);
+//   }
+// };

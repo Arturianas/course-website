@@ -1,6 +1,16 @@
 .courseCarousele {
 
-  padding-bottom: 200px;
+  padding-bottom: 20px;
+  // border: 2px solid red;
+
+
+  @media only screen and (max-width: 500px) {
+    // flex-direction: column;
+    // height: calc(70vh - 70px);
+    // max-width: 400px;
+  }
+
+
   .wrapperCarousele{
 
     position: relative;
@@ -8,32 +18,54 @@
 
     .sliderArrow {
       width: 50px;
-      height: 100%;
-      background-color: rgb(22, 22, 22, 0.5);
+      height: 50px;
+      background-color: #FF3B3F;
+      // background-color: rgb(22, 22, 22, 0.5);
+      opacity: 0.6;
       color: white;
       position: absolute;
       z-index: 9;
       top: 0;
       bottom: 0;
+
       margin: auto;
       cursor: pointer;
 
+      border-radius: 50%;
+
       &.left {
-        left: 0;
+        left: 20px;
       }
 
       &.right {
-        right: 0;
+        right: 20px;
+      }
+
+
+      @media only screen and (max-width: 500px) {
+        // flex-direction: column;
+        // height: calc(70vh - 70px);
+        // max-width: 400px;
+        display: none;
       }
     }
 
     .carousele {
-      margin-left: 50px;
+      margin:0px 50px;
+      height: 300px;
+      // width: 90%;
       display: flex;
       margin-top: 10px;
-      width: max-content;
+      // width: max-content;
       transform: translateX(0px);
       transition: all 1s ease;
+      overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  // border: 2px solid red;
+
+
+
       // overflow-x: scroll;
       
 
@@ -43,11 +75,41 @@
       // overflow-x: scroll;
       // scroll-snap-type: x mandatory;
       // scroll-behavior: smooth;
+
+
+
+      @media only screen and (max-width: 500px) {
+        // flex-direction: column;
+        // height: calc(70vh - 70px);
+        // max-width: 400px;
+        // border: 2px dashed green;
+        width: 100%;
+        margin: 0px;
+      }
+
+
+      .carouselListItem {
+        // width: 20%;
+
+
+        @media only screen and (max-width: 500px) {
+          // flex-direction: column;
+          // height: calc(70vh - 70px);
+          // max-width: 400px;
+          // border: 2px dashed purple;
+          // width: 100%;
+          margin-right: 20px;
+        }
+      }
     }
 
 
   }
 
 
+  ::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
   
 }

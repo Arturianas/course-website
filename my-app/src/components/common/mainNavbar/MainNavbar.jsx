@@ -5,11 +5,76 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 
+
+import { Link } from "react-router-dom";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { useSelector, useDispatch } from 'react-redux'
+import { Logout } from '../../../features/auth/authService'
+import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+// import useScrollPosition from '../../../hooks/useScrollPosition';
+
+
+import { motion, useScroll } from "framer-motion"
+
+
+import useScrollPosition from '@react-hook/window-scroll'
+import { useScrollDirection } from '../../../hooks/useScrollPosition';
+
+
+
+
+
+
 const MainNavbar = () => {
 
+
+  const { scrollYProgress } = useScroll();
+  const { user } = useSelector((state) => state.auth)
+  // const  cart  = useSelector((state) => state.cart)
+  const  quantity  = useSelector((state) => state.cart.quantity)
+  // const navigate = useNavigate();
+  // const [q, setQ] = useState("")
+
+  // console.log(q)
+
+  // const scrollPosition = useScrollPosition()
+  
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const onLogout = () => {
+    // dispatch(logout())
+   
+    // dispatch(reset())
+    Logout(dispatch)
+    navigate('/')
+  }
+
+
+  // const [colorChange, setColorchange] = useState(false);
+  // const changeNavbarColor = () =>{
+  //    if(window.scrollY > 3){
+  //      setColorchange(true);
+  //    }
+  //    else{
+  //      setColorchange(false);
+  //    }
+  // };
+  // window.addEventListener('scroll', changeNavbarColor);
+ console.log(scrollYProgress)
+
+ const scrollY = useScrollPosition(60 /*fps*/)
+
+
+ const scrollDirection = useScrollPosition()
+
+
     const Container = styled.div`
- height: 70px;
-background-color:white;
+  height: 70px;
+ background-color:white;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -18,24 +83,39 @@ position: sticky;
 z-index: 1500;
 top: 0;
 width:100%;
+
+transform: translateX(0px);
+      transition: all 1s ease;
 //  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+
+// background-color: ${props => props.changeOnScroll > 0 ? "blue" : "white"};
+
+//  background-color: ${props => props.scroll >= 0  ? "blue" : "white"};
+
+//  box-shadow: ${props => props.changeOnScroll > 0 && "0 2px 4px 0 rgba(0,0,0,.2)"};
 `;
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+    padding: 10px 20px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+    // padding: ${props => props.shrinkOnScroll ? "0px 20px" : "10px 20px"};
 `;
 
 const Left = styled.div`
-// background-color: #A9A9A9;
+//  background-color: #A9A9A9;
 width: 50%;
 max-width: 1000px;
 // flex:1.5;
 display: flex;
 align-items: center;
+
+@media only screen and (max-width: 500px) {
+  width: 100%;
+}
 `;
 
 const Logo = styled.h1`
@@ -43,6 +123,7 @@ const Logo = styled.h1`
   text-decoration: underline #CAEBF2;
   padding-right: 50px;
   margin: 0px;
+  padding-top: 0px;
 `;
 
 
@@ -53,6 +134,7 @@ const Right = styled.div`
   // flex:2;
   padding-left:0px;
   margin-left:0px;
+  
   
   
 `;
@@ -127,13 +209,24 @@ const MenuRight = styled.div`
 `;
 
 
+const Login = styled.div`
+//  flex:1;
+ display: flex;
+//  align-items: center;
+//  justify-content: flex-end;
+`;
+
+
 
   return (
-    <Container>
-      <Wrapper>
-
+    <Container scroll={scrollDirection} >
+      
+      <Wrapper >
+      {/* <div>scroll pos: {scrollDirection}</div> */}
         <Left>
-        <Logo>UDEMY</Logo>
+            <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+              <Logo>UNITOK</Logo>
+            </Link>
             <SearchBar/>
         </Left>
             
@@ -143,15 +236,44 @@ const MenuRight = styled.div`
         <Menu>
             <MenuLeft>
                 <MenuItem primary>Categories</MenuItem>
-                <MenuItem>Teach On Udemy</MenuItem>
-                <ShoppingCart className='icon'/>
+                <MenuItem>Teach On Unitok</MenuItem>
+                {/* <ShoppingCart className='icon'/> */}
+
+                <Link to="/cart" style={{ color: "inherit", textDecoration: "none" }}>
+                    <ShoppingCart className='icon'/><span className="cart" style={{color: "#FF3B3F"}}>{quantity}</span>
+                  </Link>
                 {/* <VerticalLine/> */}
             </MenuLeft>
             <VerticalLine/>
             <MenuRight>
-                <PersonIcon className='icon' style={{color: "#FF3B3F"}}/>
-                <MenuItem>Login</MenuItem>
-                <Button>Get Started</Button>
+                
+                {user? (
+                  
+                  <>
+                    <Button onClick={onLogout}>Logout</Button>                 
+                    <Link to="/myCourses" style={{ color: "inherit", textDecoration: "none" }}>
+                      <Button>My Courses</Button>
+                    </Link>
+                  </>
+                ) : (
+                  
+                 
+
+                  <>
+                  <Link to="/login" style={{ color: "inherit", textDecoration: "none" }}>
+                    <Login>
+                    <PersonIcon className='icon' style={{color: "#FF3B3F"}}/>
+                      <MenuItem>Login</MenuItem>
+                    </Login>
+                      
+                   
+                  </Link>
+                  <Link to="/register" style={{ color: "inherit", textDecoration: "none" }}>
+                    <Button>Get Started</Button>
+                  </Link>
+                  
+                  </>
+                )}
             </MenuRight>
             
             

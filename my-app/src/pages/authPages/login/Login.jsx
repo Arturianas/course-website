@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 // import Spinner from '../components/Spinner'
 import axios from "axios";
 import Navbar from '../../../components/common/navbar/Navbar'
+import MainNavbar from '../../../components/common/mainNavbar/MainNavbar'
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -79,7 +80,8 @@ function Login() {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
+    <MainNavbar/>
     <h1>Login</h1>
     <div className="login">
       

@@ -8,6 +8,7 @@ import Navbar from '../../../components/common/navbar/Navbar'
 // import { register, reset } from '../../features/auth/authSlice'
 // import Spinner from '../components/Spinner'
 import { register } from '../../../features/auth/authService'
+import MainNavbar from '../../../components/common/mainNavbar/MainNavbar'
 
 function Register() {
 //   const [formData, setFormData] = useState({
@@ -110,7 +111,8 @@ function Register() {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
+    <MainNavbar/>
     <h1>Please create an account</h1>
     <div className="login">
       

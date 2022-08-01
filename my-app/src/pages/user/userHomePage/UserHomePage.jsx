@@ -5,6 +5,7 @@ import CourseList from '../../../components/common/courseList/CourseList'
 import './userHomePage.scss'
 import FeaturedCourses from '../../../components/common/featuredCourses/FeaturedCourses'
 import { useSelector} from 'react-redux'
+import MainNavbar from '../../../components/common/mainNavbar/MainNavbar'
 
 const UserHomePage = () => {
 
@@ -13,7 +14,8 @@ const UserHomePage = () => {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
+    <MainNavbar/>
     <Header/>
        <div className="homeContainerCenter">
         

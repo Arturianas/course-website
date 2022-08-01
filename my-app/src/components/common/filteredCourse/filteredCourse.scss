@@ -1,0 +1,28 @@
+.searchItem{
+    // border: 2px dashed orange;
+    // padding-bottom: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+
+    img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        // border: 2px solid green;
+    }
+
+    .siDesc{
+        // border: 2px solid blue;
+        flex: 5;
+    }
+
+    .siDetails{
+        // border: 2px solid purple;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

@@ -1,6 +1,41 @@
 .listItem {
-  width: 225px;
-  height: 120px;
-  // background-color: orange;
-  margin-right: 5px;
+  // width: 400px;
+  height: 100%;
+  // width: 600px;
+  // height: 250px;
+  max-height: 100%;
+  //  background-color: orange;
+  margin-right: 20px;
+  scroll-snap-align: start;
+  // border: 2px solid orange;
+  // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  // overflow: hidden;
+position: relative;
+
+@media only screen and (max-width: 500px) {
+  // flex-direction: column;
+  // height: calc(70vh - 70px);
+  // max-width: 400px;
+  // border: 2px dashed purple;
+   width: 400px;
+  // margin: 0px;
+}
+
+
+  img{
+    max-height: 60%;
+    //  width: 400px;
+     border: 2px solid #A9A9A9;
+    object-fit: cover;
+  }
+
+  .container {
+    max-height: 40%;
+  }
+
+  .hiddenListItem {
+    z-index: 99;
+    position: absolute;
+    top: 10px;
+  }
 }

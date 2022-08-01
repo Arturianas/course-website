@@ -5,12 +5,14 @@ import AnimatedShapes from "../animatedShapes/AnimatedShapes";
 
 const Container = styled.div`
    height: calc(100vh - 70px);
+  // max-height: calc(100vh - 70px);
 //  height: 100vh;
     background-color: #EFEFEF;
   display: flex;
   // padding: 20px;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     flex-direction: column;
+    height: calc(70vh - 70px);
   }
 `;
 
@@ -42,8 +44,9 @@ const Desc = styled.p`
   font-size: 20px;
   margin-top: 10px;
   color: #535353;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     width: 100%;
+    display: none;
   }
 `;
 
@@ -93,7 +96,7 @@ const Right = styled.div`
   width: 40%;
   padding-top: 200px;
   background-color: #CAEBF2;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     display: none;
   }
 `;

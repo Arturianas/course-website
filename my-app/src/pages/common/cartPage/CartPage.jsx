@@ -4,6 +4,7 @@ import './cartPage.scss'
 import axios from 'axios'
 import Navbar from '../../../components/common/navbar/Navbar'
 import { useNavigate } from 'react-router-dom'
+import MainNavbar from '../../../components/common/mainNavbar/MainNavbar'
 
 const CartPage = () => {
     const [status, setStatus] = useState('');
@@ -36,7 +37,8 @@ const handleVisitor = () => {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
+    <MainNavbar/>
       <div className='CartWrapper'>
     <h1 className='title'>Buy Course</h1>
        <div className="top">

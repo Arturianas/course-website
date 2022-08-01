@@ -118,11 +118,14 @@
         transform-origin: top;
         z-index: 1000;
         overflow: auto;
-
+        
+    //     transform: translateY(50px);
+    //   transition: all 5s ease;
 
 
         li {
             margin-top: 15px;
+            
         }
     }
 
@@ -134,7 +137,7 @@
         // left: 0px;
         // top: 70px;
         // z-index: 69;
-
+        // transition: width 2s;
         background-color: #fafafa;
     }
 }
